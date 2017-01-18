@@ -1,7 +1,6 @@
 <template>
   <textarea v-if="inputType === 'textarea'"
     class="inputClass"
-    :value="inputValue"
     :placeholder="inputPlaceholder"
     :value="value"
     @input="updateValue($event.target.value)"
@@ -9,7 +8,6 @@
   </textarea>
   <input v-else
     :class="inputClass"
-    :value="inputValue"
     :placeholder="inputPlaceholder"
     :value="value"
     @input="updateValue($event.target.value)"
@@ -35,7 +33,7 @@ export default {
       this.$emit('input', formattedValue)
     }
   },
-  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style', 'value']
+  props: ['input-placeholder', 'input-type', 'input-size', 'input-style', 'value']
 }
 </script>
 
