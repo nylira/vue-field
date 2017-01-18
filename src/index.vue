@@ -2,12 +2,14 @@
   <textarea v-if="inputType === 'textarea'"
     class="inputClass"
     :value="inputValue"
-    :placeholder="inputPlaceholder">
+    :placeholder="inputPlaceholder"
+    v-model="inputModel">
   </textarea>
   <input v-else
     :class="inputClass"
     :value="inputValue"
     :placeholder="inputPlaceholder"
+    v-model="inputModel"
   >
 </template>
 
@@ -23,7 +25,7 @@ export default {
       return value
     },
   },
-  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style']
+  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style', 'input-model']
 }
 </script>
 
