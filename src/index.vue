@@ -28,7 +28,7 @@ export default {
       return value
     },
   },
-  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style']
+  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style', 'value']
 }
 </script>
 
