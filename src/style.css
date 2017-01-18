@@ -18,8 +18,9 @@
   background: #eee;
 }
 .pz-input:focus {
-  box-shadow: 0 0 0.5rem #b3ffec;
-  border-color: #0c9;
+  outline: none;
+  box-shadow: none;
+  border: 1px solid #09c
 }
 input.pz-input {
   height: 2rem;
@@ -45,6 +46,7 @@ textarea.pz-input {
 }
 /*==============================================================================*/
 /* WebKit, Blink, Edge */
+
 .pz-input::-webkit-input-placeholder {
   color: #666;
 }
@@ -68,7 +70,7 @@ textarea.pz-input {
 }
 
 /*==============================================================================*/
-/* override styles */
+/* sizes */
 
 .pz-input.pz-input-small {
   height: 1.5rem;
@@ -81,6 +83,9 @@ textarea.pz-input {
   padding-right: 0.75rem;
 }
 
+/*==============================================================================*/
+/* tendermint styles */
+
 .pz-input.pz-style-tendermint {
   color: #fff;
   background: hsl(210,70%,18%);
@@ -89,11 +94,25 @@ textarea.pz-input {
 .pz-input.pz-style-tendermint:focus {
   border-color: hsl(210,70%,43%);
 }
-.pz-input.pz-style-tendermint::-webkit-input-placeholder,
-.pz-input.pz-style-tendermint:-moz-placeholder,
-.pz-input.pz-style-tendermint::-moz-placeholder,
-.pz-input.pz-style-tendermint:-ms-input-placeholder,
-.pz-input.pz-style-tendermint:placeholder-shown {
+
+.pz-input.pz-style-tendermint::-webkit-input-placeholder {
+  color: hsl(210,70%,70%);
+}
+/* Mozilla Firefox 4 to 18 */
+.pz-input.pz-style-tendermint:-moz-placeholder {
   color: hsl(210,70%,70%);
   opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+.pz-input.pz-style-tendermint::-moz-placeholder {
+  color: hsl(210,70%,70%);
+  opacity: 1;
+}
+/* Internet Explorer 10-11 */
+.pz-input.pz-style-tendermint:-ms-input-placeholder {
+  color: hsl(210,70%,70%);
+}
+/* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
+.pz-input.pz-style-tendermint:placeholder-shown {
+  color: hsl(210,70%,70%);
 }
