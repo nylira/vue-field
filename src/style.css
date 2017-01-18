@@ -28,25 +28,6 @@ textarea.pz-input {
   height: 8rem;
 }
 
-.pz-input.pz-input-small {
-  height: 1.5rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-.pz-input.pz-input-large {
-  height: 3rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-.pz-input.pz-style-tendermint {
-  color: #fff;
-  background: hsl(210,70%,18%);
-  border-color: hsl(210,70%,38%);
-}
-.pz-input.pz-style-tendermint:focus {
-  border-color: hsl(210,70%,43%);
-}
-
 /*==============================================================================*/
 .input-group-addon {
   background: #eee;
@@ -85,3 +66,33 @@ textarea.pz-input {
 .pz-input:placeholder-shown {
   color: #666;
 }
+
+/*==============================================================================*/
+/* override styles */
+
+.pz-input.pz-input-small {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.pz-input.pz-input-large {
+  height: 3rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.pz-input.pz-style-tendermint {
+  color: #fff;
+  background: hsl(210,70%,18%);
+  border-color: hsl(210,70%,38%);
+}
+.pz-input.pz-style-tendermint:focus {
+  border-color: hsl(210,70%,43%);
+}
+.pz-input.pz-style-tendermint::-webkit-input-placeholder,
+.pz-input.pz-style-tendermint:-moz-placeholder,
+.pz-input.pz-style-tendermint::-moz-placeholder,
+.pz-input.pz-style-tendermint:-ms-input-placeholder,
+.pz-input.pz-style-tendermint:placeholder-shown {
+  color: hsl(210,70%,70%);
+  opacity: 1;
