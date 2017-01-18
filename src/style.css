@@ -20,7 +20,7 @@
 .pz-input:focus {
   outline: none;
   box-shadow: none;
-  border: 1px solid #09c
+  border: 1px solid #09c;
 }
 input.pz-input {
   height: 2rem;
@@ -80,7 +80,7 @@ textarea.pz-input {
 }
 .pz-input.pz-input-large {
   height: 3rem;
-  font-size 1.125rem;
+  font-size: 1.125rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
