@@ -3,16 +3,16 @@
     class="inputClass"
     :value="inputValue"
     :placeholder="inputPlaceholder"
-    v-bind:value="value"
-    v-on:input="value = arguments[0]"
+    :value="value"
+    @input="updateValue($event.target.value)"
     >
   </textarea>
   <input v-else
     :class="inputClass"
     :value="inputValue"
     :placeholder="inputPlaceholder"
-    v-bind:value="value"
-    v-on:input="value = arguments[0]"
+    :value="value"
+    @input="updateValue($event.target.value)"
   >
 </template>
 
@@ -27,6 +27,13 @@ export default {
       if (this.inputStyle === 'tendermint') value += ' pz-style-tendermint'
       return value
     },
+  },
+  methods: {
+    updateValue (value) {
+      let formattedValue = value.trim()
+      // Emit the number value through the input event
+      this.$emit('input', formattedValue))
+    }
   },
   props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style', 'value']
 }
