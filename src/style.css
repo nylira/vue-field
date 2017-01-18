@@ -19,7 +19,7 @@
 }
 .pz-input:focus {
   box-shadow: 0 0 0.5rem #b3ffec;
-  border-color: link;
+  border-color: #0c9;
 }
 input.pz-input {
   height: 2rem;
@@ -27,6 +27,26 @@ input.pz-input {
 textarea.pz-input {
   height: 8rem;
 }
+
+.pz-input.pz-input-small {
+  height: 1.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.pz-input.pz-input-large {
+  height: 3rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.pz-input.pz-style-tendermint {
+  color: #fff;
+  background: hsl(210,70%,18%);
+  border-color: hsl(210,70%,38%);
+}
+.pz-input.pz-style-tendermint:focus {
+  border-color: hsl(210,70%,43%);
+}
+
 /*==============================================================================*/
 .input-group-addon {
   background: #eee;
