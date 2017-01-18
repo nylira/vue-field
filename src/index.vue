@@ -3,13 +3,16 @@
     class="inputClass"
     :value="inputValue"
     :placeholder="inputPlaceholder"
-    v-model="inputModel">
+    v-bind:value="value"
+    v-on:input="value = arguments[0]"
+    >
   </textarea>
   <input v-else
     :class="inputClass"
     :value="inputValue"
     :placeholder="inputPlaceholder"
-    v-model="inputModel"
+    v-bind:value="value"
+    v-on:input="value = arguments[0]"
   >
 </template>
 
@@ -25,7 +28,7 @@ export default {
       return value
     },
   },
-  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style', 'input-model']
+  props: ['input-value', 'input-placeholder', 'input-type', 'input-size', 'input-style']
 }
 </script>
 
