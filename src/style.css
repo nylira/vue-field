@@ -96,3 +96,4 @@ textarea.pz-input {
 .pz-input.pz-style-tendermint:placeholder-shown {
   color: hsl(210,70%,70%);
   opacity: 1;
+}
