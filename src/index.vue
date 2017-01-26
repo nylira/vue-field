@@ -7,6 +7,7 @@
     >
   </textarea>
   <input v-else
+    :type="inputType"
     :class="inputClass"
     :placeholder="inputPlaceholder"
     :value="value"
