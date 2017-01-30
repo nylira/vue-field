@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'pz-button',
+  name: 'pz-input',
   computed: {
     inputClass () {
       let value = 'pz-input'
@@ -34,7 +34,12 @@ export default {
       this.$emit('input', formattedValue)
     }
   },
-  props: ['input-placeholder', 'input-type', 'input-size', 'input-style', 'value']
+  mounted () {
+    if (this.required) {
+      this.$el.required = true
+    }
+  },
+  props: ['input-placeholder', 'input-type', 'input-size', 'input-style', 'value', 'required']
 }
 </script>
 
