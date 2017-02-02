@@ -34,9 +34,17 @@ export default {
       this.$emit('input', formattedValue)
     }
   },
-  mounted () {
+  beforeMount () {
     if (this.required) {
       this.$el.required = true
+    }
+  },
+  mounted () {
+    let el = this.$el
+    if (this.type === 'number') {
+      el.addEventListener('focus', function () {
+        el.select()
+      })
     }
   },
   props: ['placeholder', 'type', 'size', 'value', 'required', 'theme']
