@@ -1,15 +1,15 @@
 <template>
-  <textarea v-if="inputType === 'textarea'"
-    class="inputClass"
-    :placeholder="inputPlaceholder"
+  <textarea v-if="type === 'textarea'"
+    class="css"
+    :placeholder="placeholder"
     :value="value"
     @input="updateValue($event.target.value)"
     >
   </textarea>
   <input v-else
-    :type="inputType"
-    :class="inputClass"
-    :placeholder="inputPlaceholder"
+    :type="type"
+    :class="css"
+    :placeholder="placeholder"
     :value="value"
     @input="updateValue($event.target.value)"
   >
@@ -19,11 +19,11 @@
 export default {
   name: 'pz-input',
   computed: {
-    inputClass () {
+    css () {
       let value = 'pz-input'
-      if (this.inputSize === 'large') value += ' pz-input-large'
-      if (this.inputSize === 'small') value += ' pz-input-small'
-      if (this.inputStyle === 'tendermint') value += ' pz-style-tendermint'
+      if (this.size === 'large') value += ' pz-input-large'
+      if (this.size === 'small') value += ' pz-input-small'
+      if (this.theme === 'tendermint') value += ' pz-style-tendermint'
       return value
     },
   },
@@ -39,7 +39,7 @@ export default {
       this.$el.required = true
     }
   },
-  props: ['input-placeholder', 'input-type', 'input-size', 'input-style', 'value', 'required']
+  props: ['placeholder', 'type', 'size', 'value', 'required', 'theme']
 }
 </script>
 
