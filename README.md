@@ -8,7 +8,7 @@ Flexible input field component for Vue 2.
 ## Usage
 
     <template>
-      <field date="February 28, 2017"></field>
+      <field v-model="email" placeholder="Enter your email"></field>
     </template>
 
     <script>
@@ -16,6 +16,11 @@ Flexible input field component for Vue 2.
       export default {
         components: {
           Field
+        },
+        data () {
+          return {
+            email: ''
+          }
         }
       }
     </script>
@@ -28,10 +33,8 @@ Flexible input field component for Vue 2.
 
 ## Props
 
-  props: ['placeholder', 'type', 'size', 'value', 'required', 'theme']
-
     value=""
-    // The value of the input field
+    // The value of the input field, also can be used with v-model
     // Options: Any valid string
 
     placeholder=""
