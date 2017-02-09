@@ -17,13 +17,13 @@
 
 <script>
 export default {
-  name: 'pz-input',
+  name: 'ni-input',
   computed: {
     css () {
-      let value = 'pz-input'
-      if (this.size === 'large') value += ' pz-input-large'
-      if (this.size === 'small') value += ' pz-input-small'
-      if (this.theme === 'tendermint') value += ' pz-style-tendermint'
+      let value = 'ni-input'
+      if (this.size === 'lg') value += ' ni-input-large'
+      if (this.size === 'sm') value += ' ni-input-small'
+      if (this.theme === 'tendermint') value += ' ni-theme-tendermint'
       return value
     },
   },

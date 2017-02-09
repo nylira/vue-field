@@ -1,5 +1,5 @@
 /*==============================================================================*/
-.pz-input {
+.ni-field {
   -webkit-appearance: none;
   border: 1px solid #ccc;
   vertical-align: top;
@@ -11,25 +11,26 @@
   width: 100%;
   background: #fff;
 }
-.pz-input:disabled {
+.ni-field:disabled {
   color: #666;
   text-shadow: none;
   box-shadow: none;
   background: #eee;
 }
-.pz-input:focus {
+.ni-field:focus {
   outline: none;
   box-shadow: none;
   border: 1px solid #09c;
 }
-input.pz-input {
+input.ni-field {
   height: 2rem;
 }
-textarea.pz-input {
+textarea.ni-field {
   height: 8rem;
 }
 
 /*==============================================================================*/
+
 .input-group-addon {
   background: #eee;
   border: 1px solid #ccc;
@@ -44,41 +45,42 @@ textarea.pz-input {
     font-size: 1rem;
   }
 }
+
 /*==============================================================================*/
 /* WebKit, Blink, Edge */
 
-.pz-input::-webkit-input-placeholder {
+.ni-field::-webkit-input-placeholder {
   color: #666;
 }
 /* Mozilla Firefox 4 to 18 */
-.pz-input:-moz-placeholder {
+.ni-field:-moz-placeholder {
   color: #666;
   opacity: 1;
 }
 /* Mozilla Firefox 19+ */
-.pz-input::-moz-placeholder {
+.ni-field::-moz-placeholder {
   color: #666;
   opacity: 1;
 }
 /* Internet Explorer 10-11 */
-.pz-input:-ms-input-placeholder {
+.ni-field:-ms-input-placeholder {
   color: #666;
 }
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
-.pz-input:placeholder-shown {
+.ni-field:placeholder-shown {
   color: #666;
 }
 
 /*==============================================================================*/
 /* sizes */
 
-.pz-input.pz-input-small {
+.ni-field.ni-field-small {
   height: 1.5rem;
   font-size: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.pz-input.pz-input-large {
+.ni-field.ni-field-large {
   height: 3rem;
   font-size: 1.125rem;
   padding-left: 0.75rem;
@@ -88,33 +90,32 @@ textarea.pz-input {
 /*==============================================================================*/
 /* tendermint styles */
 
-.pz-input.pz-style-tendermint {
+.ni-field.ni-theme-tendermint {
   color: #fff;
   background: hsl(210,70%,18%);
   border-color: hsl(210,70%,38%);
-}
-.pz-input.pz-style-tendermint:focus {
+} .ni-field.ni-theme-tendermint:focus {
   border-color: hsl(210,70%,43%);
 }
 
-.pz-input.pz-style-tendermint::-webkit-input-placeholder {
+.ni-field.ni-theme-tendermint::-webkit-input-placeholder {
   color: hsl(210,70%,70%);
 }
 /* Mozilla Firefox 4 to 18 */
-.pz-input.pz-style-tendermint:-moz-placeholder {
+.ni-field.ni-theme-tendermint:-moz-placeholder {
   color: hsl(210,70%,70%);
   opacity: 1;
 }
 /* Mozilla Firefox 19+ */
-.pz-input.pz-style-tendermint::-moz-placeholder {
+.ni-field.ni-theme-tendermint::-moz-placeholder {
   color: hsl(210,70%,70%);
   opacity: 1;
 }
 /* Internet Explorer 10-11 */
-.pz-input.pz-style-tendermint:-ms-input-placeholder {
+.ni-field.ni-theme-tendermint:-ms-input-placeholder {
   color: hsl(210,70%,70%);
 }
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
-.pz-input.pz-style-tendermint:placeholder-shown {
+.ni-field.ni-theme-tendermint:placeholder-shown {
   color: hsl(210,70%,70%);
 }
