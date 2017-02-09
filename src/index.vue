@@ -17,12 +17,12 @@
 
 <script>
 export default {
-  name: 'ni-input',
+  name: 'ni-field',
   computed: {
     css () {
-      let value = 'ni-input'
-      if (this.size === 'lg') value += ' ni-input-large'
-      if (this.size === 'sm') value += ' ni-input-small'
+      let value = 'ni-field'
+      if (this.size === 'lg') value += ' ni-field-large'
+      if (this.size === 'sm') value += ' ni-field-small'
       if (this.theme === 'tendermint') value += ' ni-theme-tendermint'
       return value
     },
