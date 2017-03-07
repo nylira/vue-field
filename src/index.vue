@@ -1,18 +1,17 @@
 <template>
   <textarea v-if="type === 'textarea'"
-    class="css"
+    :class="css"
     :placeholder="placeholder"
     :value="value"
-    @input="updateValue($event.target.value)"
-    >
+    @input="updateValue($event.target.value)">
   </textarea>
   <input v-else
     :type="type"
     :class="css"
     :placeholder="placeholder"
     :value="value"
-    @input="updateValue($event.target.value)"
-  >
+    @input="updateValue($event.target.value)">
+  </input>
 </template>
 
 <script>
