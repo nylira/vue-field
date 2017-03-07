@@ -26,7 +26,8 @@ input.ni-field {
   height: 2rem;
 }
 textarea.ni-field {
-  height: 6rem;
+  height: 4rem;
+  resize: none;
 }
 
 /*==============================================================================*/
