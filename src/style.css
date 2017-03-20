@@ -9,6 +9,7 @@
   border-radius: 0;
   display: block;
   width: 100%;
+  min-width: 0;
   background: #fff;
 }
 .ni-field:disabled {
