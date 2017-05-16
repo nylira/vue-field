@@ -128,30 +128,45 @@ textarea.ni-field {
 .ni-field.ni-field-theme-cosmos {
   background: transparent;
   color: hsl(210,32%,86%);
-  border-color: hsl(210, 26%, 36%);
+  border-color: hsl(210, 20%, 18%);
 }
 .ni-field.ni-field-theme-cosmos:focus {
   border-color: hsl(210, 41%, 49%)
 }
 
 .ni-field.ni-field-theme-cosmos::-webkit-input-placeholder {
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
   color: hsl(210, 32%, 70%);
 }
 /* Mozilla Firefox 4 to 18 */
 .ni-field.ni-field-theme-cosmos:-moz-placeholder {
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
   color: hsl(210, 32%, 70%);
   opacity: 1;
 }
 /* Mozilla Firefox 19+ */
 .ni-field.ni-field-theme-cosmos::-moz-placeholder {
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
   color: hsl(210, 32%, 70%);
   opacity: 1;
 }
 /* Internet Explorer 10-11 */
 .ni-field.ni-field-theme-cosmos:-ms-input-placeholder {
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
   color: hsl(210, 32%, 70%);
 }
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field.ni-field-theme-cosmos:placeholder-shown {
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  text-transform: uppercase;
   color: hsl(210, 32%, 70%);
 }
