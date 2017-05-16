@@ -7,7 +7,7 @@
       @input="updateValue($event.target.value)">
     </select>
   </div>
-  <textarea v-if="type === 'textarea'"
+  <textarea v-else-if="type === 'textarea'"
     :class="css"
     :placeholder="placeholder"
     :value="value"
@@ -28,10 +28,9 @@ export default {
   computed: {
     css () {
       let value = 'ni-field'
-      if (this.size === 'lg') value += ' ni-field-large'
-      if (this.size === 'sm') value += ' ni-field-small'
-      if (this.theme === 'tendermint') value += ' ni-theme-tendermint'
-      if (this.theme === 'cosmos') value += ' ni-theme-cosmos'
+      if (this.type === 'select') value += ' ni-field-select'
+      if (this.size) value += ` ni-field-size-${this.size}`
+      if (this.theme) value += ` ni-field-theme-${this.theme}`
       return value
     }
   },
