@@ -76,13 +76,13 @@ textarea.ni-field {
 /*==============================================================================*/
 /* sizes */
 
-.ni-field.ni-field-small {
+.ni-field.ni-field-size-sm {
   height: 1.5rem;
   font-size: 0.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.ni-field.ni-field-large {
+.ni-field.ni-field-size-lg {
   height: 3rem;
   font-size: 1.125rem;
   padding-left: 0.75rem;
@@ -92,32 +92,66 @@ textarea.ni-field {
 /*==============================================================================*/
 /* tendermint styles */
 
-.ni-field.ni-theme-tendermint {
+.ni-field.ni-field-theme-tendermint {
   color: #fff;
   background: hsl(210,70%,18%);
   border-color: hsl(210,70%,38%);
-} .ni-field.ni-theme-tendermint:focus {
+} .ni-field.ni-field-theme-tendermint:focus {
   border-color: hsl(210,70%,43%);
 }
 
-.ni-field.ni-theme-tendermint::-webkit-input-placeholder {
+.ni-field.ni-field-theme-tendermint::-webkit-input-placeholder {
   color: hsl(210,70%,70%);
 }
 /* Mozilla Firefox 4 to 18 */
-.ni-field.ni-theme-tendermint:-moz-placeholder {
+.ni-field.ni-field-theme-tendermint:-moz-placeholder {
   color: hsl(210,70%,70%);
   opacity: 1;
 }
 /* Mozilla Firefox 19+ */
-.ni-field.ni-theme-tendermint::-moz-placeholder {
+.ni-field.ni-field-theme-tendermint::-moz-placeholder {
   color: hsl(210,70%,70%);
   opacity: 1;
 }
 /* Internet Explorer 10-11 */
-.ni-field.ni-theme-tendermint:-ms-input-placeholder {
+.ni-field.ni-field-theme-tendermint:-ms-input-placeholder {
   color: hsl(210,70%,70%);
 }
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
-.ni-field.ni-theme-tendermint:placeholder-shown {
+.ni-field.ni-field-theme-tendermint:placeholder-shown {
   color: hsl(210,70%,70%);
+}
+
+/*==============================================================================*/
+/* cosmos styles */
+
+.ni-field.ni-field-theme-cosmos {
+  background: transparent;
+  color: hsl(210,32%,86%);
+  border-color: hsl(210, 26%, 36%);
+}
+.ni-field.ni-field-theme-cosmos:focus {
+  border-color: hsl(210, 41%, 49%)
+}
+
+.ni-field.ni-field-theme-cosmos::-webkit-input-placeholder {
+  color: hsl(210, 32%, 70%);
+}
+/* Mozilla Firefox 4 to 18 */
+.ni-field.ni-field-theme-cosmos:-moz-placeholder {
+  color: hsl(210, 32%, 70%);
+  opacity: 1;
+}
+/* Mozilla Firefox 19+ */
+.ni-field.ni-field-theme-cosmos::-moz-placeholder {
+  color: hsl(210, 32%, 70%);
+  opacity: 1;
+}
+/* Internet Explorer 10-11 */
+.ni-field.ni-field-theme-cosmos:-ms-input-placeholder {
+  color: hsl(210, 32%, 70%);
+}
+/* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
+.ni-field.ni-field-theme-cosmos:placeholder-shown {
+  color: hsl(210, 32%, 70%);
 }

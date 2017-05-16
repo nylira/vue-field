@@ -1,4 +1,12 @@
 <template>
+  <div class="css" v-if="type === 'select'">
+    <select 
+      :class="css"
+      :placeholder="placeholder"
+      :value="value"
+      @input="updateValue($event.target.value)">
+    </select>
+  </div>
   <textarea v-if="type === 'textarea'"
     :class="css"
     :placeholder="placeholder"
@@ -23,8 +31,9 @@ export default {
       if (this.size === 'lg') value += ' ni-field-large'
       if (this.size === 'sm') value += ' ni-field-small'
       if (this.theme === 'tendermint') value += ' ni-theme-tendermint'
+      if (this.theme === 'cosmos') value += ' ni-theme-cosmos'
       return value
-    },
+    }
   },
   methods: {
     updateValue (value) {
