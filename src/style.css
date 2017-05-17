@@ -129,6 +129,7 @@ textarea.ni-field {
   background: transparent;
   color: hsl(210,32%,86%);
   border-color: hsl(210, 20%, 18%);
+  font-family: 'DIN', -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 .ni-field.ni-field-theme-cosmos:focus {
   border-color: hsl(210, 41%, 49%)
