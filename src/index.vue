@@ -41,11 +41,6 @@ export default {
       this.$emit('input', formattedValue)
     }
   },
-  beforeMount () {
-    if (this.required) {
-      this.$el.required = true
-    }
-  },
   mounted () {
     let el = this.$el
     if (this.type === 'number') {
@@ -54,7 +49,7 @@ export default {
       })
     }
   },
-  props: ['placeholder', 'type', 'size', 'value', 'required', 'theme']
+  props: ['placeholder', 'type', 'size', 'value', 'theme']
 }
 </script>
 
