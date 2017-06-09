@@ -139,14 +139,14 @@ textarea.ni-field {
   font-size: 0.75rem;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
-  color: hsl(210, 32%, 70%);
+  color: hsl(210, 32%, 50%);
 }
 /* Mozilla Firefox 4 to 18 */
 .ni-field.ni-field-theme-cosmos:-moz-placeholder {
   font-size: 0.75rem;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
-  color: hsl(210, 32%, 70%);
+  color: hsl(210, 32%, 50%);
   opacity: 1;
 }
 /* Mozilla Firefox 19+ */
@@ -154,7 +154,7 @@ textarea.ni-field {
   font-size: 0.75rem;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
-  color: hsl(210, 32%, 70%);
+  color: hsl(210, 32%, 50%);
   opacity: 1;
 }
 /* Internet Explorer 10-11 */
@@ -162,12 +162,12 @@ textarea.ni-field {
   font-size: 0.75rem;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
-  color: hsl(210, 32%, 70%);
+  color: hsl(210, 32%, 50%);
 }
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field.ni-field-theme-cosmos:placeholder-shown {
   font-size: 0.75rem;
   letter-spacing: 0.025rem;
   text-transform: uppercase;
-  color: hsl(210, 32%, 70%);
+  color: hsl(210, 32%, 50%);
 }
