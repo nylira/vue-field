@@ -1,7 +1,6 @@
 <template>
   <div :class="css" v-if="type === 'select'">
     <select 
-      :class="css"
       :placeholder="placeholder"
       :value="value"
       @input="updateValue($event.target.value)">
