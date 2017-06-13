@@ -5,7 +5,7 @@
       :placeholder="placeholder"
       :value="value"
       @input="updateValue($event.target.value)">
-      <option v-for="option in orderById(options)" :value="option.id">
+      <option v-for="option in options" :value="option.id">
         {{ option.id }}
       </option>
     </select>
