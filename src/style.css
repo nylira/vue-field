@@ -31,6 +31,43 @@ textarea.ni-field {
   resize: none;
 }
 
+.ni-field-select {
+  position: relative;
+  width: 100%;
+}
+
+.ni-field-select:after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  border: 1px solid #ccc;
+  background: #fff;
+
+  font-family: FontAwesome;
+  content: "\f0d7";
+  text-align: center;
+  color: #000;
+
+  pointer-events: none;
+}
+
+.ni-field-select select {
+  appearance: none;
+  border-radius: 0;
+  width: 100%;
+  background: #fff;
+}
+
+
 /*==============================================================================*/
 
 .input-group-addon {

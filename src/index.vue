@@ -1,10 +1,13 @@
 <template>
-  <div class="css" v-if="type === 'select'">
+  <div :class="css" v-if="type === 'select'">
     <select 
       :class="css"
       :placeholder="placeholder"
       :value="value"
       @input="updateValue($event.target.value)">
+      <option v-for="option in orderById(options)" :value="option.id">
+        {{ option.id }}
+      </option>
     </select>
   </div>
   <textarea v-else-if="type === 'textarea'"
@@ -25,6 +28,7 @@
 <script>
 export default {
   name: 'ni-field',
+  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
   computed: {
     css () {
       let value = 'ni-field'
@@ -48,8 +52,7 @@ export default {
         el.select()
       })
     }
-  },
-  props: ['placeholder', 'type', 'size', 'value', 'theme']
+  }
 }
 </script>
 
