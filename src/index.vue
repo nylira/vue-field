@@ -4,8 +4,18 @@
       :placeholder="placeholder"
       :value="value"
       @input="updateValue($event.target.value)">
-      <option v-for="option in options" :value="option.id">
-        {{ option.id }}
+      <option v-for="option in options" :value="option.value">
+        {{ option.key }}
+      </option>
+    </select>
+  </div>
+  <div :class="css" v-else-if="type === 'countries'">
+    <select 
+      :placeholder="placeholder"
+      :value="value"
+      @input="updateValue($event.target.value)">
+      <option v-for="countries in countries" :value="option.value">
+        {{ option.key }}
       </option>
     </select>
   </div>
@@ -25,6 +35,7 @@
 </template>
 
 <script>
+import countries from './countries.json'
 export default {
   name: 'ni-field',
   props: ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
@@ -37,6 +48,9 @@ export default {
       return value
     }
   },
+  data: () => ({
+    countries: countries
+  }),
   methods: {
     updateValue (value) {
       let formattedValue = value.trim()
