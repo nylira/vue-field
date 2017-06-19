@@ -28,7 +28,7 @@ input.ni-field {
 }
 textarea.ni-field {
   height: 4rem;
-  resize: none;
+  resize: vertical;
 }
 
 .ni-field-select {
