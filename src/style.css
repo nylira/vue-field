@@ -163,48 +163,39 @@ textarea.ni-field {
 /* cosmos styles */
 
 .ni-field.ni-field-theme-cosmos {
-  background: transparent;
-  color: hsl(210,32%,86%);
-  border-color: hsl(210, 20%, 18%);
+  background: hsl(210, 20%, 7%);
+  color: hsl(0,0%,70%);
+  border-color: hsl(210, 9%, 21%);
   font-family: 'DIN', -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
-.ni-field.ni-field-theme-cosmos:focus {
-  border-color: hsl(210, 41%, 49%)
+.ni-field.ni-field-theme-cosmos:hover {
+  border-color: hsl(210, 7%, 29%);
+}
+.ni-field.ni-field-theme-cosmos:focus,
+.ni-field.ni-field-theme-cosmos:active {
+  border-color: hsl(210, 100%, 50%);
+  color: hsl(mhue, 4%, 91%);
+  background:  hsl(0,0%,0%);
 }
 
 .ni-field.ni-field-theme-cosmos::-webkit-input-placeholder {
-  font-size: 0.75rem;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: hsl(210, 32%, 50%);
+  color: hsl(0,0%,70%);
 }
 /* Mozilla Firefox 4 to 18 */
 .ni-field.ni-field-theme-cosmos:-moz-placeholder {
-  font-size: 0.75rem;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: hsl(210, 32%, 50%);
+  color: hsl(0,0%,70%);
   opacity: 1;
 }
 /* Mozilla Firefox 19+ */
 .ni-field.ni-field-theme-cosmos::-moz-placeholder {
-  font-size: 0.75rem;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: hsl(210, 32%, 50%);
+  color: hsl(0,0%,70%);
   opacity: 1;
 }
 /* Internet Explorer 10-11 */
 .ni-field.ni-field-theme-cosmos:-ms-input-placeholder {
-  font-size: 0.75rem;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: hsl(210, 32%, 50%);
+  color: hsl(0,0%,70%);
 }
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field.ni-field-theme-cosmos:placeholder-shown {
-  font-size: 0.75rem;
-  letter-spacing: 0.025rem;
-  text-transform: uppercase;
-  color: hsl(210, 32%, 50%);
+  color: hsl(0,0%,70%);
 }
