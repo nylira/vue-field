@@ -52,12 +52,6 @@ export default {
       let formattedValue = value.trim()
       // Emit the number value through the input event
       this.$emit('input', formattedValue)
-    },
-    toggleSelect () {
-      console.log('toggling select')
-      let select = document.querySelector(this.$el.id + ' > select')
-      console.log('select', select)
-      select.click()
     }
   },
   mounted () {
@@ -106,25 +100,28 @@ textarea.ni-field
   resize vertical
 
 .ni-select
-  display flex
+  position relative
 
   select
-    flex 1
     appearance none
     border-radius 0
     background input-bg
-    width auto
+    width 100%
     color txt
+    padding-right 2rem
 
   .ni-field-select-addon
-    flex 0 0 2rem
+    position absolute
+    top 0
+    right 0
+
     display flex
     align-items center
     justify-content center
     box-sizing border-box
     height 2rem
-    border 1px solid input-bc
-    border-left none
+    width 2rem
+    border-left 1px solid input-bc
 
     background input-bg
     text-align center
