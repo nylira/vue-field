@@ -72,11 +72,11 @@ export default {
 </script>
 
 <style lang='stylus'>
-sans = -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif
+@require '~@/styles/variables.styl'
 
 .ni-field
   -webkit-appearance none
-  border 1px solid #ccc
+  border 1px solid input-bc
   vertical-align top
   padding 0.1875rem 0.5rem
   font-size 16px
@@ -85,18 +85,18 @@ sans = -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI"
   display block
   width 100%
   min-width 0
-  background #fff
+  background input-bg
 
 .ni-field:disabled
-  color #666
+  color dim
   text-shadow none
   box-shadow none
-  background #eee
+  background input-bg
 
 .ni-field:focus
   outline none
   box-shadow none
-  border 1px solid #09c
+  border 1px solid link
 
 input.ni-field
   height 2rem
@@ -112,8 +112,9 @@ textarea.ni-field
     flex 1
     appearance none
     border-radius 0
-    background #fff
+    background input-bg
     width auto
+    color txt
 
   .ni-field-select-addon
     flex 0 0 2rem
@@ -122,21 +123,22 @@ textarea.ni-field
     justify-content center
     box-sizing border-box
     height 2rem
-    border 1px solid #ccc
+    border 1px solid input-bc
     border-left none
 
-    background #fff
+    background input-bg
     text-align center
-    color #000
+    color txt
     pointer-events none
 
 /*==============================================================================*/
+
 .input-group-addon
-  background #eee
-  border 1px solid #ccc
+  background input-bg
+  border 1px solid input-bc
   border-left none
   padding 0 0.5rem
-  color #666
+  color txt
   line-height 1.875rem
   font-size 0.75rem
 
@@ -147,25 +149,25 @@ textarea.ni-field
 /*==============================================================================*/
 /* WebKit, Blink, Edge */
 .ni-field::-webkit-input-placeholder
-  color #666
+  color dim
 
 /* Mozilla Firefox 4 to 18 */
 .ni-field:-moz-placeholder
-  color #666
+  color dim
   opacity 1
 
 /* Mozilla Firefox 19+ */
 .ni-field::-moz-placeholder
-  color #666
+  color dim
   opacity 1
 
 /* Internet Explorer 10-11 */
 .ni-field:-ms-input-placeholder
-  color #666
+  color dim
 
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field:placeholder-shown
-  color #666
+  color dim
 
 /*==============================================================================*/
 /* sizes */
@@ -183,6 +185,7 @@ textarea.ni-field
 
 /*==============================================================================*/
 /* tendermint styles */
+
 .ni-field.ni-field-theme-tendermint
   color #fff
   background hsl(210,70%,18%)
@@ -211,42 +214,4 @@ textarea.ni-field
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field.ni-field-theme-tendermint:placeholder-shown
   color hsl(210,70%,70%)
-
-/*==============================================================================*/
-/* cosmos styles */
-.ni-field.ni-field-theme-cosmos
-  background transparent
-  color hsl(0,0%,70%)
-  border-color hsl(210, 9%, 21%)
-  font-family sans 
-
-  &:hover
-    border-color hsl(210, 7%, 29%)
-
-  &:focus,
-  &:active
-    border-color hsl(210, 100%, 50%)
-    color hsl(210, 4%, 91%)
-    background hsl(0,0%,0%)
-
-  &::-webkit-input-placeholder
-    color hsl(0,0%,70%)
-
-  /* Mozilla Firefox 4 to 18 */
-  &:-moz-placeholder
-    color hsl(0,0%,70%)
-    opacity 1
-
-  /* Mozilla Firefox 19+ */
-  &::-moz-placeholder
-    color hsl(0,0%,70%)
-    opacity 1
-
-  /* Internet Explorer 10-11 */
-  &:-ms-input-placeholder
-    color hsl(0,0%,70%)
-
-  /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
-  &:placeholder-shown
-    color hsl(0,0%,70%)
 </style>
