@@ -1,9 +1,9 @@
-# vue-input
-Flexible input field component for Vue 2.
+# vue-field
+Flexible input, textarea, and select component for Vue 2.
 
 ## Installation
 
-    npm install @nylira/vue-input
+    npm install @nylira/vue-field
 
 ## Usage
 
@@ -12,7 +12,7 @@ Flexible input field component for Vue 2.
     </template>
 
     <script>
-      import Field from '@nylira/vue-input'
+      import Field from '@nylira/vue-field'
       export default {
         components: {
           Field
@@ -34,22 +34,22 @@ Flexible input field component for Vue 2.
 ## Props
 
     value=""
-    // The value of the input field, also can be used with v-model
+    // The value of the field field, also can be used with v-model
     // Options: Any valid string
 
     placeholder=""
-    // The input field placeholder
+    // The field field placeholder
     // Options: Any valid string
 
     size=""
-    // Chanage the size of the input field
+    // Chanage the size of the field field
     // Options: "lg", "sm"
 
     required
     // Self-explanatory
 
     theme="tendermint"
-    // Adds a custom input field theme
+    // Adds a custom field field theme
     // Options: "tendermint"
 
     type="text"

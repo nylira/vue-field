@@ -1,6 +1,6 @@
 {
   "name": "@nylira/vue-field",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flexible field, textarea, and select component for Vue.",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,8 @@
   "keywords": [
     "field",
     "textarea",
+    "input",
+    "select",
     "html",
     "vue"
   ],

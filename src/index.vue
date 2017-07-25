@@ -148,6 +148,7 @@ textarea.ni-field
 
 /*==============================================================================*/
 /* WebKit, Blink, Edge */
+
 .ni-field::-webkit-input-placeholder
   color dim
 
@@ -171,6 +172,7 @@ textarea.ni-field
 
 /*==============================================================================*/
 /* sizes */
+
 .ni-field.ni-field-size-sm
   height 1.5rem
   font-size 0.75rem
