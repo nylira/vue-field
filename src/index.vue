@@ -70,16 +70,23 @@ export default {
 
 .ni-field
   -webkit-appearance none
+
   border 1px solid input-bc
-  vertical-align top
-  padding 0.1875rem 0.5rem
-  font-size 16px
-  line-height 1.5rem
   border-radius 0
+
+  vertical-align top
+
+  padding 0.1875rem 0.5rem
+
   display block
   width 100%
   min-width 0
+
   background input-bg
+
+  color txt
+  font-size 16px
+  line-height 1.5rem
 
 .ni-field:disabled
   color dim
