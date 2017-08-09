@@ -11,7 +11,7 @@
       | {{ country.key }}
     option(v-if='options' v-for='option in options' :value='option.value')
       | {{ option.key }}
-  .ni-field-select-addon(@click='toggleSelect')
+  .ni-field-select-addon
     i.material-icons arrow_drop_down
 
 textarea(v-else-if="type === 'textarea'"
