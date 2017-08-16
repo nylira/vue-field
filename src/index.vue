@@ -40,9 +40,9 @@ input(v-else=''
 import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
-  name 'ni-field',
-  props ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
-  computed {
+  name: 'ni-field',
+  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
+  computed: {
     css () {
       let value = 'ni-field'
       if (this.type === 'select' || this.type === 'countries') {
@@ -54,9 +54,9 @@ export default {
     }
   },
   data () => ({
-    countries countries
+    countries: countries
   }),
-  methods {
+  methods: {
     updateValue (value) {
       let formattedValue = value.trim()
       // Emit the number value through the input event
