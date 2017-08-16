@@ -72,8 +72,8 @@ export default {
     }
     if (this.type === 'datetime') {
       this.picker = flatpickr(el, {
-        enableTime true,
-        dateFormat 'Y-m-d H:i',
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
         onChange (dateObj, dateStr) => this.updateValue(dateStr)
       })
       // console.log('its a datetime!', el)
