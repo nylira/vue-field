@@ -53,7 +53,7 @@ export default {
       return value
     }
   },
-  data () => ({
+  data: () => ({
     countries: countries
   }),
   methods: {
