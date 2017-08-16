@@ -14,6 +14,14 @@
   .ni-field-select-addon
     i.material-icons arrow_drop_down
 
+.ni-datetime(v-else-if="type === 'datetime'")
+  input(
+    type="text"
+    :class="css"
+    :placeholder="placeholder"
+    :value="value"
+    @input="updateValue($event.target.value)")
+
 textarea(v-else-if="type === 'textarea'"
   :class='css'
   :placeholder='placeholder'
@@ -29,11 +37,12 @@ input(v-else=''
 </template>
 
 <script>
+import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
-  name: 'ni-field',
-  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
-  computed: {
+  name 'ni-field',
+  props ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
+  computed {
     css () {
       let value = 'ni-field'
       if (this.type === 'select' || this.type === 'countries') {
@@ -44,10 +53,10 @@ export default {
       return value
     }
   },
-  data: () => ({
-    countries: countries
+  data () => ({
+    countries countries
   }),
-  methods: {
+  methods {
     updateValue (value) {
       let formattedValue = value.trim()
       // Emit the number value through the input event
@@ -60,6 +69,14 @@ export default {
       el.addEventListener('focus', function () {
         el.select()
       })
+    }
+    if (this.type === 'datetime') {
+      this.picker = flatpickr(el, {
+        enableTime true,
+        dateFormat 'Y-m-d H:i',
+        onChange (dateObj, dateStr) => this.updateValue(dateStr)
+      })
+      // console.log('its a datetime!', el)
     }
   }
 }
@@ -134,6 +151,29 @@ textarea.ni-field
     text-align center
     color txt
     pointer-events none
+
+/*==============================================================================*/
+
+.ni-datetime
+  position relative
+
+.ni-datetime:after
+  display flex
+  align-items center
+  justify-content center
+  box-sizing border-box
+  width 2rem
+  height 2rem
+  position absolute
+  top 0
+  right 0
+  border 1px solid #ccc
+  background #fff
+  font-family FontAwesome
+  content "\f073"
+  text-align center
+  color #000
+  pointer-events none
 
 /*==============================================================================*/
 
