@@ -1,7 +1,7 @@
 <template lang='pug'>
 .ni-select(v-if="type === 'select' || type === 'countries'")
   select(:class='css' :value='value' @input='updateValue($event.target.value)')
-    option(value="" disabled selected) {{ selectPlaceholder }}
+    option(value="" disabled selected hidden) {{ selectPlaceholder }}
     option(v-if="type === 'countries'" v-for='i in countries' :value='i.value'
     :key='i.key') {{ i.key }}
     option(v-if='options' v-for='i in options' :value='i.value') {{ option.key }}
@@ -130,6 +130,9 @@ textarea.ni-field
     width 100%
     color txt
     padding-right 2rem
+
+    &:invalid
+      color dim
 
   .ni-field-select-addon
     position absolute
