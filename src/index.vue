@@ -1,15 +1,11 @@
 <template lang='pug'>
 .ni-select(v-if="type === 'select' || type === 'countries'")
-  select(
-    :class='css'
-    :placeholder='placeholder'
-    :value='value'
-    @input='updateValue($event.target.value)')
+  select(:class='css' :value='value' @input='updateValue($event.target.value)')
+    option(value="" disabled selected) {{ selectPlaceholder }}
     option(v-if="type === 'countries'" v-for='i in countries' :value='i.value'
     :key='i.key') {{ i.key }}
     option(v-if='options' v-for='i in options' :value='i.value') {{ option.key }}
-  .ni-field-select-addon
-    i.material-icons arrow_drop_down
+  .ni-field-select-addon: i.material-icons arrow_drop_down
 
 .ni-datetime(v-else-if="type === 'datetime'")
   input(
@@ -48,6 +44,10 @@ export default {
       if (this.size) value += ` ni-field-size-${this.size}`
       if (this.theme) value += ` ni-field-theme-${this.theme}`
       return value
+    },
+    selectPlaceholder () {
+      if (this.placeholder) return this.placeholder
+      else return 'Select option...'
     }
   },
   data: () => ({
