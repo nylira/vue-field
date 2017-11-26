@@ -130,18 +130,17 @@ textarea.ni-field
     width 100%
     color txt
     padding-right 2rem
-    background #f00
 
     &:invalid
       color dim
 
-  option
-    color txt
-    background input-bg
-    font-family sans
-    &:checked
-      color bright
-      background hover-bg
+    option
+      color txt
+      background input-bg
+      font-family sans
+      &:checked
+        color bright
+        background hover-bg
 
   .ni-field-select-addon
     position absolute
