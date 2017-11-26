@@ -80,7 +80,7 @@ export default {
 </script>
 
 <style lang='stylus'>
-@require '~@/styles/variables.styl'
+@require '~variables'
 
 .ni-field
   -webkit-appearance none
@@ -130,9 +130,18 @@ textarea.ni-field
     width 100%
     color txt
     padding-right 2rem
+    background #f00
 
     &:invalid
       color dim
+
+  option
+    color txt
+    background input-bg
+    font-family sans
+    &:hover
+      color bright
+      background hover-bg
 
   .ni-field-select-addon
     position absolute
