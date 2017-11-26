@@ -139,7 +139,7 @@ textarea.ni-field
     color txt
     background input-bg
     font-family sans
-    &:hover
+    &:checked
       color bright
       background hover-bg
 
