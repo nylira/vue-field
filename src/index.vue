@@ -1,5 +1,5 @@
 <template lang='pug'>
-.ni-select(v-if="type === "select" || type === "countries"")
+.ni-select(v-if="type === 'select' || type === 'countries'")
   select(
     :class="css"
     :value="value"
