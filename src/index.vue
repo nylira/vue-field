@@ -1,32 +1,39 @@
 <template lang='pug'>
-.ni-select(v-if="type === 'select' || type === 'countries'")
-  select(:class='css' :value='value' @input='updateValue($event.target.value)')
+.ni-select(v-if="type === "select" || type === "countries"")
+  select(
+    :class="css"
+    :value="value"
+    @input="updateValue($event.target.value)"
+    @change="onChange")
     option(value="" disabled selected hidden) {{ selectPlaceholder }}
-    option(v-if="type === 'countries'" v-for='i in countries' :value='i.value'
-    :key='i.key') {{ i.key }}
-    option(v-if='options' v-for='i in options' :value='i.value') {{ i.key }}
+    option(v-if="type === "countries"" v-for="i in countries" :value="i.value"
+    :key="i.key") {{ i.key }}
+    option(v-if="options" v-for="i in options" :value="i.value") {{ i.key }}
   .ni-field-select-addon: i.material-icons arrow_drop_down
 
-.ni-datetime(v-else-if="type === 'datetime'")
+.ni-datetime(v-else-if="type === "datetime"")
   input(
     type="text"
     :class="css"
+    @change="onChange"
     :placeholder="placeholder"
     :value="value"
     @input="updateValue($event.target.value)")
 
-textarea(v-else-if="type === 'textarea'"
-  :class='css'
-  :placeholder='placeholder'
-  :value='value'
-  @input='updateValue($event.target.value)')
+textarea(v-else-if="type === "textarea""
+  :class="css"
+  @change="onChange"
+  :placeholder="placeholder"
+  :value="value"
+  @input="updateValue($event.target.value)")
 
-input(v-else=''
-  :type='type'
-  :class='css'
-  :placeholder='placeholder'
-  :value='value'
-  @input='updateValue($event.target.value)')
+input(v-else=""
+  :type="type"
+  :class="css"
+  @change="onChange"
+  :placeholder="placeholder"
+  :value="value"
+  @input="updateValue($event.target.value)")
 </template>
 
 <script>
@@ -34,7 +41,7 @@ import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
   name: 'ni-field',
-  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options'],
+  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'change'],
   computed: {
     css () {
       let value = 'ni-field'
@@ -106,7 +113,8 @@ export default {
   color dim
   text-shadow none
   box-shadow none
-  background input-bg
+  background app-fg
+  border app-fg
 
 .ni-field:focus
   outline none
