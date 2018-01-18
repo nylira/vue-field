@@ -41,7 +41,7 @@ import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
   name: 'ni-field',
-  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'change'],
+  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'on-change'],
   computed: {
     css () {
       let value = 'ni-field'
