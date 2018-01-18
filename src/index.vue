@@ -41,7 +41,7 @@ import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
   name: 'ni-field',
-  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'on-change'],
+  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'change'],
   computed: {
     css () {
       let value = 'ni-field'
@@ -65,7 +65,12 @@ export default {
       let formattedValue = value.trim()
       // Emit the number value through the input event
       this.$emit('input', formattedValue)
-    }
+    },
+    onChange () {
+      if (this.change) {
+        return change
+      }
+    },
   },
   mounted () {
     let el = this.$el
