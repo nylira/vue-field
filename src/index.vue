@@ -66,10 +66,7 @@ export default {
       // Emit the number value through the input event
       this.$emit('input', formattedValue)
     },
-    onChange () {
-      if (this.change) {
-        return change
-      }
+    onChange () { if (this.change) { return this.change }
     },
   },
   mounted () {
