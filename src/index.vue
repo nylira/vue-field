@@ -5,8 +5,8 @@
     :value="value"
     @input="updateValue($event.target.value)"
     @change="onChange"
-    @change="onKeyup"
-    @change="onKeydown")
+    @keyup="onKeyup"
+    @keydown="onKeydown")
     option(value="" disabled selected hidden) {{ selectPlaceholder }}
     option(v-if="type === 'countries'" v-for="i in countries" :value="i.value"
     :key="i.key") {{ i.key }}
@@ -18,8 +18,8 @@
     type="text"
     :class="css"
     @change="onChange"
-    @change="onKeyup"
-    @change="onKeydown"
+    @keyup="onKeyup"
+    @keydown="onKeydown"
     :placeholder="placeholder"
     :value="value"
     @input="updateValue($event.target.value)")
@@ -27,8 +27,8 @@
 textarea(v-else-if="type === 'textarea'"
   :class="css"
   @change="onChange"
-  @change="onKeyup"
-  @change="onKeydown"
+  @keyup="onKeyup"
+  @keydown="onKeydown"
   :placeholder="placeholder"
   :value="value"
   @input="updateValue($event.target.value)")
@@ -37,8 +37,8 @@ input(v-else
   :type="type"
   :class="css"
   @change="onChange"
-  @change="onKeyup"
-  @change="onKeydown"
+  @keyup="onKeyup"
+  @keydown="onKeydown"
   :placeholder="placeholder"
   :value="value"
   @input="updateValue($event.target.value)")
@@ -49,7 +49,7 @@ import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
   name: 'ni-field',
-  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'change'],
+  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'change', 'keyup', 'keydown'],
   computed: {
     css () {
       let value = 'ni-field'
@@ -75,7 +75,7 @@ export default {
       this.$emit('input', formattedValue)
     },
     onChange () { if (this.change) return this.change },
-    onKeyup (event) { if (this.keyup) return this.keydown(event) },
+    onKeyup (event) { if (this.keyup) return this.keyup(event) },
     onKeydown (event) { if (this.keydown) return this.keydown(event) }
   },
   mounted () {
