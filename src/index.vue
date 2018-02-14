@@ -74,9 +74,9 @@ export default {
       // Emit the number value through the input event
       this.$emit('input', formattedValue)
     },
-    onChange () { if (this.change) return this.change },
-    onKeyup (event) { if (this.keyup) return this.keyup(event) },
-    onKeydown (event) { if (this.keydown) return this.keydown(event) }
+    onChange (...args) { if (this.change) return this.change(...args) },
+    onKeyup (...args) { if (this.keyup) return this.keyup(...args) },
+    onKeydown (...args) { if (this.keydown) return this.keydown(...args) }
   },
   mounted () {
     let el = this.$el
