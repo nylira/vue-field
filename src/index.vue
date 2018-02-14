@@ -4,7 +4,9 @@
     :class="css"
     :value="value"
     @input="updateValue($event.target.value)"
-    @change="onChange")
+    @change="onChange"
+    @change="onKeyup"
+    @change="onKeydown")
     option(value="" disabled selected hidden) {{ selectPlaceholder }}
     option(v-if="type === 'countries'" v-for="i in countries" :value="i.value"
     :key="i.key") {{ i.key }}
@@ -16,6 +18,8 @@
     type="text"
     :class="css"
     @change="onChange"
+    @change="onKeyup"
+    @change="onKeydown"
     :placeholder="placeholder"
     :value="value"
     @input="updateValue($event.target.value)")
@@ -23,6 +27,8 @@
 textarea(v-else-if="type === 'textarea'"
   :class="css"
   @change="onChange"
+  @change="onKeyup"
+  @change="onKeydown"
   :placeholder="placeholder"
   :value="value"
   @input="updateValue($event.target.value)")
@@ -31,6 +37,8 @@ input(v-else
   :type="type"
   :class="css"
   @change="onChange"
+  @change="onKeyup"
+  @change="onKeydown"
   :placeholder="placeholder"
   :value="value"
   @input="updateValue($event.target.value)")
@@ -66,8 +74,9 @@ export default {
       // Emit the number value through the input event
       this.$emit('input', formattedValue)
     },
-    onChange () { if (this.change) { return this.change }
-    },
+    onChange () { if (this.change) return this.change },
+    onKeyup (event) { if (this.keyup) return this.keydown(event) },
+    onKeydown (event) { if (this.keydown) return this.keydown(event) }
   },
   mounted () {
     let el = this.$el
