@@ -131,7 +131,7 @@ export default {
   line-height 1.5rem
 
 .ni-field:disabled
-  color var(--dim, #ddd)
+  color var(--dim, #666)
   text-shadow none
   box-shadow none
   background var(--app-fg, #eee)
@@ -231,25 +231,25 @@ textarea.ni-field
 /* WebKit, Blink, Edge */
 
 .ni-field::-webkit-input-placeholder
-  color var(--dim, #ddd)
+  color var(--dim, #666)
 
 /* Mozilla Firefox 4 to 18 */
 .ni-field:-moz-placeholder
-  color var(--dim, #ddd)
+  color var(--dim, #666)
   opacity 1
 
 /* Mozilla Firefox 19+ */
 .ni-field::-moz-placeholder
-  color var(--dim, #ddd)
+  color var(--dim, #666)
   opacity 1
 
 /* Internet Explorer 10-11 */
 .ni-field:-ms-input-placeholder
-  color var(--dim, #ddd)
+  color var(--dim, #666)
 
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field:placeholder-shown
-  color var(--dim, #ddd)
+  color var(--dim, #666)
 
 /*==============================================================================*/
 /* sizes */
