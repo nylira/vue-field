@@ -13,7 +13,7 @@
     option(v-if="options" v-for="i in options" :value="i.value") {{ i.key }}
   .ni-field-select-addon: i.material-icons arrow_drop_down
 
-.ni-datetime(v-else-if="type === 'datetime'")
+// .ni-datetime(v-else-if="type === 'datetime'")
   input(
     type="text"
     :class="css"
@@ -45,7 +45,7 @@ input(v-else
 </template>
 
 <script>
-import flatpickr from 'flatpickr'
+// import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
   name: 'ni-field',
@@ -95,14 +95,14 @@ export default {
         el.select()
       })
     }
-    if (this.type === 'datetime') {
+    /* if (this.type === 'datetime') {
       this.picker = flatpickr(el, {
         enableTime: true,
         dateFormat: 'Y-m-d H:i',
         onChange: (dateObj, dateStr) => this.updateValue(dateStr)
       })
       // console.log('its a datetime!', el)
-    }
+    } */
   }
 }
 </script>
