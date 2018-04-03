@@ -49,7 +49,17 @@ import flatpickr from 'flatpickr'
 import countries from './countries.json'
 export default {
   name: 'ni-field',
-  props: ['placeholder', 'type', 'size', 'value', 'theme', 'options', 'change', 'keyup', 'keydown'],
+  props: [
+    'placeholder',
+    'type',
+    'size',
+    'value',
+    'theme',
+    'options',
+    'change',
+    'keyup',
+    'keydown'
+  ],
   computed: {
     css () {
       let value = 'ni-field'
@@ -103,7 +113,7 @@ export default {
 .ni-field
   -webkit-appearance none
 
-  border 1px solid input-bc
+  border 1px solid var(--input-bc, #ccc)
   border-radius 0
 
   vertical-align top
@@ -114,23 +124,23 @@ export default {
   width 100%
   min-width 0
 
-  background input-bg
+  background var(--input-bg, #fff)
 
-  color txt
+  color var(--txt, #333)
   font-size 16px
   line-height 1.5rem
 
 .ni-field:disabled
-  color dim
+  color var(--dim, #ddd)
   text-shadow none
   box-shadow none
-  background app-fg
-  border app-fg
+  background var(--app-fg, #eee)
+  border var(--app-fg, #eee)
 
 .ni-field:focus
   outline none
   box-shadow none
-  border 1px solid link
+  border 1px solid var(--link, #00f)
 
 input.ni-field
   height 2rem
@@ -145,9 +155,9 @@ textarea.ni-field
   select
     appearance none
     border-radius 0
-    background input-bg
+    background var(--input-bg, #fff)
     width 100%
-    color txt
+    color var(--txt, #333)
     padding-right 2rem
 
     &:invalid
@@ -155,11 +165,11 @@ textarea.ni-field
 
     option
       color txt
-      background input-bg
+      background var(--input-bg, #fff)
       font-family sans
       &:checked
-        color bright
-        background hover-bg
+        color var(--bright, #000)
+        background var(--hover-bg, #ccf)
 
   .ni-field-select-addon
     position absolute
@@ -172,11 +182,11 @@ textarea.ni-field
     box-sizing border-box
     height 2rem
     width 2rem
-    border-left 1px solid input-bc
+    border-left 1px solid var(--input-bc, #ccc)
 
-    background input-bg
+    background var(--input-bg, #fff)
     text-align center
-    color txt
+    color var(--txt, #333)
     pointer-events none
 
 /*==============================================================================*/
@@ -194,22 +204,22 @@ textarea.ni-field
   position absolute
   top 0
   right 0
-  border 1px solid #ccc
-  background #fff
+  border 1px solid var(--input-bc, #ccc)
+  background var(--app-bg, #fff)
   font-family FontAwesome
   content "\f073"
   text-align center
-  color #000
+  color var(--bright)
   pointer-events none
 
 /*==============================================================================*/
 
 .input-group-addon
-  background input-bg
-  border 1px solid input-bc
+  background var(--input-bg, #fff)
+  border 1px solid var(--input-bc, #ccc)
   border-left none
   padding 0 0.5rem
-  color txt
+  color var(--txt, #333)
   line-height 1.875rem
   font-size 0.75rem
 
@@ -221,25 +231,25 @@ textarea.ni-field
 /* WebKit, Blink, Edge */
 
 .ni-field::-webkit-input-placeholder
-  color dim
+  color var(--dim, #ddd)
 
 /* Mozilla Firefox 4 to 18 */
 .ni-field:-moz-placeholder
-  color dim
+  color var(--dim, #ddd)
   opacity 1
 
 /* Mozilla Firefox 19+ */
 .ni-field::-moz-placeholder
-  color dim
+  color var(--dim, #ddd)
   opacity 1
 
 /* Internet Explorer 10-11 */
 .ni-field:-ms-input-placeholder
-  color dim
+  color var(--dim, #ddd)
 
 /* Standard (https//drafts.csswg.org/selectors-4/#placeholder) */
 .ni-field:placeholder-shown
-  color dim
+  color var(--dim, #ddd)
 
 /*==============================================================================*/
 /* sizes */
