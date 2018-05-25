@@ -8,9 +8,9 @@
     @keyup="onKeyup"
     @keydown="onKeydown")
     option(value="" disabled selected hidden) {{ selectPlaceholder }}
-    option(v-if="type === 'countries'" v-for="i in countries" :value="i.value"
-    :key="i.key") {{ i.key }}
     option(v-if="options" v-for="i in options" :value="i.value") {{ i.key }}
+    option(v-else-if="type === 'countries'" v-for="i in countries" :value="i.value"
+    :key="i.key") {{ i.key }}
   .ni-field-select-addon: i.material-icons arrow_drop_down
 
 // .ni-datetime(v-else-if="type === 'datetime'")
@@ -60,7 +60,7 @@ input(v-else
 
 <script>
 // import flatpickr from 'flatpickr'
-import countries from "./countries.json";
+import countries from "./countries.json"
 export default {
   name: "ni-field",
   props: [
@@ -77,39 +77,39 @@ export default {
   ],
   computed: {
     css() {
-      let value = "ni-field";
+      let value = "ni-field"
       if (this.type === "select" || this.type === "countries") {
-        value += " ni-field-select";
+        value += " ni-field-select"
       }
       if (this.type === "toggle") {
-        value += " ni-field-toggle";
+        value += " ni-field-toggle"
       }
-      if (this.size) value += ` ni-field-size-${this.size}`;
-      if (this.theme) value += ` ni-field-theme-${this.theme}`;
-      return value;
+      if (this.size) value += ` ni-field-size-${this.size}`
+      if (this.theme) value += ` ni-field-theme-${this.theme}`
+      return value
     },
     toggleClass() {
       return {
         unchecked: !this.value
-      };
+      }
     },
     toggleLongerWord() {
       return this.toggleOptions.checked.length >
         this.toggleOptions.unchecked.length
         ? this.toggleOptions.checked
-        : this.toggleOptions.unchecked;
+        : this.toggleOptions.unchecked
     },
     selectPlaceholder() {
-      if (this.placeholder) return this.placeholder;
-      else return "Select option...";
+      if (this.placeholder) return this.placeholder
+      else return "Select option..."
     },
     toggleOptions() {
       if (this.options && this.options.checked && this.options.unchecked)
-        return this.options;
+        return this.options
       return {
         checked: "on",
         unchecked: "off"
-      };
+      }
     }
   },
   data: () => ({
@@ -117,29 +117,29 @@ export default {
   }),
   methods: {
     toggle() {
-      this.value = !this.value;
+      this.value = !this.value
     },
     updateValue(value) {
-      let formattedValue = value.trim();
+      let formattedValue = value.trim()
       // Emit the number value through the input event
-      this.$emit("input", formattedValue);
+      this.$emit("input", formattedValue)
     },
     onChange(...args) {
-      if (this.change) return this.change(...args);
+      if (this.change) return this.change(...args)
     },
     onKeyup(...args) {
-      if (this.keyup) return this.keyup(...args);
+      if (this.keyup) return this.keyup(...args)
     },
     onKeydown(...args) {
-      if (this.keydown) return this.keydown(...args);
+      if (this.keydown) return this.keydown(...args)
     }
   },
   mounted() {
-    let el = this.$el;
+    let el = this.$el
     if (this.type === "number") {
       el.addEventListener("focus", function() {
-        el.select();
-      });
+        el.select()
+      })
     }
     /* if (this.type === 'datetime') {
       this.picker = flatpickr(el, {
@@ -150,7 +150,7 @@ export default {
       // console.log('its a datetime!', el)
     } */
   }
-};
+}
 </script>
 
 <style lang='stylus'>
