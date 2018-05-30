@@ -60,7 +60,7 @@ input(v-else
 
 <script>
 // import flatpickr from 'flatpickr'
-import countries from "./countries.json"
+import countries from "./countries.json";
 export default {
   name: "ni-field",
   props: [
@@ -77,39 +77,39 @@ export default {
   ],
   computed: {
     css() {
-      let value = "ni-field"
+      let value = "ni-field";
       if (this.type === "select" || this.type === "countries") {
-        value += " ni-field-select"
+        value += " ni-field-select";
       }
       if (this.type === "toggle") {
-        value += " ni-field-toggle"
+        value += " ni-field-toggle";
       }
-      if (this.size) value += ` ni-field-size-${this.size}`
-      if (this.theme) value += ` ni-field-theme-${this.theme}`
-      return value
+      if (this.size) value += ` ni-field-size-${this.size}`;
+      if (this.theme) value += ` ni-field-theme-${this.theme}`;
+      return value;
     },
     toggleClass() {
       return {
         unchecked: !this.value
-      }
+      };
     },
     toggleLongerWord() {
       return this.toggleOptions.checked.length >
         this.toggleOptions.unchecked.length
         ? this.toggleOptions.checked
-        : this.toggleOptions.unchecked
+        : this.toggleOptions.unchecked;
     },
     selectPlaceholder() {
-      if (this.placeholder) return this.placeholder
-      else return "Select option..."
+      if (this.placeholder) return this.placeholder;
+      else return "Select option...";
     },
     toggleOptions() {
       if (this.options && this.options.checked && this.options.unchecked)
-        return this.options
+        return this.options;
       return {
         checked: "on",
         unchecked: "off"
-      }
+      };
     }
   },
   data: () => ({
@@ -117,29 +117,29 @@ export default {
   }),
   methods: {
     toggle() {
-      this.value = !this.value
+      this.value = !this.value;
     },
     updateValue(value) {
-      let formattedValue = value.trim()
+      let formattedValue = value.trim();
       // Emit the number value through the input event
-      this.$emit("input", formattedValue)
+      this.$emit("input", formattedValue);
     },
     onChange(...args) {
-      if (this.change) return this.change(...args)
+      if (this.change) return this.change(...args);
     },
     onKeyup(...args) {
-      if (this.keyup) return this.keyup(...args)
+      if (this.keyup) return this.keyup(...args);
     },
     onKeydown(...args) {
-      if (this.keydown) return this.keydown(...args)
+      if (this.keydown) return this.keydown(...args);
     }
   },
   mounted() {
-    let el = this.$el
+    let el = this.$el;
     if (this.type === "number") {
       el.addEventListener("focus", function() {
-        el.select()
-      })
+        el.select();
+      });
     }
     /* if (this.type === 'datetime') {
       this.picker = flatpickr(el, {
@@ -150,7 +150,7 @@ export default {
       // console.log('its a datetime!', el)
     } */
   }
-}
+};
 </script>
 
 <style lang='stylus'>
@@ -219,7 +219,7 @@ textarea.ni-field
       border-radius 1em 0 0 1em
       left calc(-1.625rem / 2)
     &:after
-      background var(--app-bg, #8c8fa6)
+      background var(--danger, #8c8fa6)
       border-radius 0 1em 1em 0
       right calc(-1.625rem / 2)
     .toggle-option-checked,
@@ -242,7 +242,7 @@ textarea.ni-field
       left 0
       width 100%
     .toggle-option-unchecked
-      background: var(--app-bg, #8c8fa6)
+      background: var(--danger, #8c8fa6)
       right 0
       width 0%
     .toggle-handle
@@ -250,11 +250,11 @@ textarea.ni-field
         transition right 500ms ease, left 500ms ease
         position absolute
         top 2px
-        right calc(-1.625rem/2)
+        right calc(-1.65rem/2)
         left auto
         width 1.625rem
         height 1.625rem
-        background var(--txt, #d4d5de)
+        background var(--bc, #d4d5de)
         border-radius 1rem
         z-index z(listItem)
 
@@ -275,7 +275,7 @@ textarea.ni-field
     .toggle-option-unchecked
       width 100%
     .toggle-handle:after
-      right calc(100% - .8125rem)
+      right calc(100% - .7500rem)
 
 .ni-select
   position relative
