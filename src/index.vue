@@ -8,9 +8,9 @@
     @keyup="onKeyup"
     @keydown="onKeydown")
     option(value="" disabled selected hidden) {{ selectPlaceholder }}
-    option(v-if="type === 'countries'" v-for="i in countries" :value="i.value"
-    :key="i.key") {{ i.key }}
     option(v-if="options" v-for="i in options" :value="i.value") {{ i.key }}
+    option(v-else-if="type === 'countries'" v-for="i in countries" :value="i.value"
+    :key="i.key") {{ i.key }}
   .ni-field-select-addon: i.material-icons arrow_drop_down
 
 // .ni-datetime(v-else-if="type === 'datetime'")
@@ -33,6 +33,20 @@ textarea(v-else-if="type === 'textarea'"
   :value="value"
   @input="updateValue($event.target.value)")
 
+label.ni-toggle(
+  v-else-if="type === 'toggle'"
+  :class="toggleClass")
+  .ni-toggle-wrapper
+    span {{toggleLongerWord}}
+    .toggle-option-checked: div {{toggleOptions.checked}}
+    .toggle-option-unchecked: div {{toggleOptions.unchecked}}
+    .toggle-handle
+    input(
+      type="checkbox"
+      @change="onChange"
+      :value="value"
+    )
+
 input(v-else
   :type="type"
   :class="css"
@@ -46,54 +60,86 @@ input(v-else
 
 <script>
 // import flatpickr from 'flatpickr'
-import countries from './countries.json'
+import countries from "./countries.json";
 export default {
-  name: 'ni-field',
+  name: "ni-field",
   props: [
-    'placeholder',
-    'type',
-    'size',
-    'value',
-    'theme',
-    'options',
-    'change',
-    'keyup',
-    'keydown'
+    "placeholder",
+    "type",
+    "size",
+    "value",
+    "theme",
+    "options",
+    "change",
+    "keyup",
+    "keydown",
+    "options"
   ],
   computed: {
-    css () {
-      let value = 'ni-field'
-      if (this.type === 'select' || this.type === 'countries') {
-        value += ' ni-field-select'
+    css() {
+      let value = "ni-field";
+      if (this.type === "select" || this.type === "countries") {
+        value += " ni-field-select";
       }
-      if (this.size) value += ` ni-field-size-${this.size}`
-      if (this.theme) value += ` ni-field-theme-${this.theme}`
-      return value
+      if (this.type === "toggle") {
+        value += " ni-field-toggle";
+      }
+      if (this.size) value += ` ni-field-size-${this.size}`;
+      if (this.theme) value += ` ni-field-theme-${this.theme}`;
+      return value;
     },
-    selectPlaceholder () {
-      if (this.placeholder) return this.placeholder
-      else return 'Select option...'
+    toggleClass() {
+      return {
+        unchecked: !this.value
+      };
+    },
+    toggleLongerWord() {
+      return this.toggleOptions.checked.length >
+        this.toggleOptions.unchecked.length
+        ? this.toggleOptions.checked
+        : this.toggleOptions.unchecked;
+    },
+    selectPlaceholder() {
+      if (this.placeholder) return this.placeholder;
+      else return "Select option...";
+    },
+    toggleOptions() {
+      if (this.options && this.options.checked && this.options.unchecked)
+        return this.options;
+      return {
+        checked: "on",
+        unchecked: "off"
+      };
     }
   },
   data: () => ({
     countries: countries
   }),
   methods: {
-    updateValue (value) {
-      let formattedValue = value.trim()
-      // Emit the number value through the input event
-      this.$emit('input', formattedValue)
+    toggle() {
+      this.value = !this.value;
     },
-    onChange (...args) { if (this.change) return this.change(...args) },
-    onKeyup (...args) { if (this.keyup) return this.keyup(...args) },
-    onKeydown (...args) { if (this.keydown) return this.keydown(...args) }
+    updateValue(value) {
+      let formattedValue = value.trim();
+      // Emit the number value through the input event
+      this.$emit("input", formattedValue);
+    },
+    onChange(...args) {
+      if (this.change) return this.change(...args);
+    },
+    onKeyup(...args) {
+      if (this.keyup) return this.keyup(...args);
+    },
+    onKeydown(...args) {
+      if (this.keydown) return this.keydown(...args);
+    }
   },
-  mounted () {
-    let el = this.$el
-    if (this.type === 'number') {
-      el.addEventListener('focus', function () {
-        el.select()
-      })
+  mounted() {
+    let el = this.$el;
+    if (this.type === "number") {
+      el.addEventListener("focus", function() {
+        el.select();
+      });
     }
     /* if (this.type === 'datetime') {
       this.picker = flatpickr(el, {
@@ -104,7 +150,7 @@ export default {
       // console.log('its a datetime!', el)
     } */
   }
-}
+};
 </script>
 
 <style lang='stylus'>
@@ -148,6 +194,88 @@ input.ni-field
 textarea.ni-field
   height 4rem
   resize vertical
+
+.ni-toggle
+  border 1px solid var(--input-bc, #ccc)
+  height 2rem
+  padding 0 2px
+  border-radius 1rem
+  *
+    cursor pointer
+  .ni-toggle-wrapper
+    padding 0 1.25rem
+    transform: rotate(0deg);
+    margin-right calc(1.625rem / 2)
+    margin-left calc(1.625rem / 2)
+    &:before, &:after
+      content ''
+      width 1.625rem
+      height 1.625rem
+      position absolute
+      top 2px
+      z-index: 0
+    &:before
+      background var(--success, #4acf4a)
+      border-radius 1em 0 0 1em
+      left calc(-1.625rem / 2)
+    &:after
+      background var(--danger, #8c8fa6)
+      border-radius 0 1em 1em 0
+      right calc(-1.625rem / 2)
+    .toggle-option-checked,
+    .toggle-option-unchecked
+      z-index: 1
+      position absolute
+      top 2px
+      overflow hidden
+      height 1.625rem
+      clip: rect(0, auto, auto, 0);
+      transition width 500ms ease
+      > div
+        position fixed
+        left 0
+        width 100%
+        top 2px
+        text-align center
+    .toggle-option-checked
+      background: var(--success, #4acf4a)
+      left 0
+      width 100%
+    .toggle-option-unchecked
+      background: var(--danger, #8c8fa6)
+      right 0
+      width 0%
+    .toggle-handle
+      &:after
+        transition right 500ms ease, left 500ms ease
+        position absolute
+        top 2px
+        right calc(-1.65rem/2)
+        left auto
+        width 1.625rem
+        height 1.625rem
+        background var(--bc, #d4d5de)
+        border-radius 1rem
+        z-index z(listItem)
+
+        // display flex
+        // align-items center
+        // justify-content center
+        content ''
+        // content 'drag_handle'
+        // font-size x
+        // font-family 'Material Icons'
+        // transform  rotate(90DEG)
+        // color var(--bc, hsl(233, 22%, 23%))
+    input[type="checkbox"]
+      display none
+  &.unchecked
+    .toggle-option-checked
+      width 0
+    .toggle-option-unchecked
+      width 100%
+    .toggle-handle:after
+      right calc(100% - .7500rem)
 
 .ni-select
   position relative
